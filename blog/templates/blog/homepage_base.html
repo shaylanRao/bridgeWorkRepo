@@ -1,0 +1,54 @@
+{% extends 'blog/base_new.html' %}
+{% block body %}
+
+		<!-- Banner -->
+			<section class="banner full">
+				<!-- loop -->
+				{% for i in banner_photos %} 
+					{% block banner_photo  %} {% endblock %}
+				{% endfor %}
+			</section>
+
+
+		<!-- Articles -->
+			<section id="articles" class="wrapper style2">
+				<div class="inner">
+					<div class="grid-style">
+						{% for i in img %}
+							<!-- detailed article for most recent two -->
+							{% if i is img.0 or i is img.1%}
+								{% block detailed_article %} {% endblock %}
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+
+
+		<!-- Divider Banner -->
+			<section id="divider_banner" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						{% block divider %}
+						{% endblock %}
+					</header>
+				</div>
+			</section>
+
+
+		<!-- Quick Articles -->
+			<section id="quick_articles" class="wrapper style2">
+				<div class="inner">
+					<header class="align-center">
+						<p class="special">Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
+						<h2>Morbi maximus justo</h2>
+					</header>
+					<div class="gallery">
+					{% for i in img %}
+						{%block quick_article %} {% endblock %}
+					{% endfor %}
+				</div>
+				</div>
+			</section>
+
+{%endblock%}

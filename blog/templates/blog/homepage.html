@@ -1,0 +1,65 @@
+{% extends 'blog/homepage_base.html' %}
+
+{% block menu %}
+	<li><a href="!!index.html">Home</a></li>
+	<li><a href="!!generic.html">Gallery</a></li>
+	<li><a href="{% url 'post_list' %}">Blog</a></li>
+	<li><a href="!!elements.html">About</a></li>
+	{% if user.is_authenticated %}
+		<li><a href="!!elements.html">Add</a></li>
+    {% endif %}
+{% endblock %}
+
+
+{% block banner_photo %}
+	<article>
+		<!--img here -->
+		<img src="{{i.ref_loc}}" alt="" />
+		<div class="inner">
+			<header>
+				<!--img caption -->
+				<p>{{i.location}}</p>
+				<h2>{{i.title}}</h2>
+			</header>
+		</div>
+	</article>
+{% endblock %}
+
+
+
+
+{% block detailed_article %}
+	<div>
+		<div class="box">
+			<div class="image fit">
+				<!--img here -->
+				<img src="{{i.ref_loc}}" alt="" />
+			</div>
+			<div class="content">
+				<header class="align-center">
+					<p>{{i.location}}</p>
+					<h2>{{i.title}}</h2>
+				</header>
+				<p class="align-center"> {{i.text}}</p>
+				<footer class="align-center">
+					<a href="gallery!!" class="button alt">Learn More</a>
+				</footer>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+
+{% block divider %}
+	<p>I am the divider (i want to be placed after two articles/p>
+	<h2>Morbi maximus justo</h2>
+{% endblock %}
+
+{%block quick_article %}
+		<div>
+			<div class="image fit">
+				<a href="#!!"><img src="{{i.ref_loc}}" alt="" /></a>
+			</div>
+		</div>
+{% endblock %}

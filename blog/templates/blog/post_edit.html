@@ -1,0 +1,19 @@
+{% extends 'blog/base_new.html' %}
+
+{% block body %}
+	<section id="post_detail" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+					<header class="align-center">
+    					<h2>Edit Post</h2>
+    					<form method="POST" class="post-form">{% csrf_token %}
+        				{{ form.as_p }}
+       					<button type="submit" class="button special fit">Save</button>
+    					</form>
+    				</header>
+    			</div>
+    		</div>
+    	</div>
+	</section>
+{% endblock %}
