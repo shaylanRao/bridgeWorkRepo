@@ -1,4 +1,4 @@
-{% extends 'blog/base_new.html' %}
+{% extends 'base_new.html' %}
 
 {% block body %}
 	<section id="post_detail" class="wrapper style2">
@@ -6,10 +6,10 @@
 			<div class="box">
 				<div class="content">
 					<header class="align-center">
-    					<h2>Edit Post</h2>
+    					<h2>Add/Edit Post</h2>
     					<form method="POST" class="post-form">{% csrf_token %}
         				{{ form.as_p }}
-       					<button type="submit" class="button special fit">Save</button>
+       					<button type="submit" class="button special">Save</button>
     					</form>
     				</header>
     			</div>

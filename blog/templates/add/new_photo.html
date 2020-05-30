@@ -1,0 +1,20 @@
+{% extends 'base_new.html' %}
+{% block body %}
+<section id="article" class="wrapper style2">
+	<div class="inner">
+		<div class="box">
+			<div class="content">
+				<header class="align-center">
+					<form method = "post" enctype="multipart/form-data" class="lign-center"> 
+        				{% csrf_token %} 
+        				{{ form.as_p }} 
+        				<button type="submit" class="special button">Upload</button> 
+    				</form>
+    			</header>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}
