@@ -35,3 +35,11 @@ def show_gallery(request, pk):
 	select_article = get_object_or_404(article, pk=pk)
 	select_photos = list(photo.objects.filter(article=pk))
 	return render(request, 'gallery/gallery.html', {"select_article":select_article, "select_photos":select_photos})
+
+
+def full_gallery(request):
+	all_photos = photo.objects.all()
+	return render(request, 'gallery/full_gallery.html', {"all_photos":all_photos})
+
+def show_about(request):
+	return render(request, 'about/about.html')

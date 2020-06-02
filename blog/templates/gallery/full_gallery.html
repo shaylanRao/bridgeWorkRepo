@@ -1,0 +1,24 @@
+{% extends 'base_new.html' %}
+{% block body %}
+
+<section id="gallery" class="wrapper style2">
+	<div class="inner">
+		<div class="gallery">
+
+			{% for i in all_photos %}
+				<div>
+					<div class="image fit">
+						<a ><img src="{{ i.image.url }}" alt="" /></a>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</section>
+
+								
+
+
+
+{% endblock %}
