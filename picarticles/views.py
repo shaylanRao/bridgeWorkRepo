@@ -7,7 +7,7 @@ from blog.forms import *
 
 def get_homepage(request):
 	#img = homearticle.objects.all()
-	img = article.objects.filter(date__lte=timezone.now()).order_by('date')
+	img = article.objects.filter(date__lte=timezone.now()).order_by('-date')
 	banner_photos = front_images.objects.all()
 	return render(request, 'homepage/homepage.html',{"img":img, "banner_photos": banner_photos})
 
